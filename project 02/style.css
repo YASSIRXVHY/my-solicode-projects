@@ -1,0 +1,352 @@
+/* Global Styles */
+:root {
+    --primary-blue: #0275ff;
+    --light-blue: #e6f0ff;
+    --yellow: #ffd700;
+    --light-yellow: #fff8e0;
+    --hover-blue: #0266e6;
+    --text-dark: #333;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--light-yellow), var(--light-blue));
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem 3rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--primary-blue);
+    border-radius: var(--border-radius);
+}
+
+.logo img {
+    max-width: 200px;
+}
+
+/* Headings */
+h1, h2 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* Form Layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Full-width form groups */
+.form-group:not(.form-row .form-group) {
+    grid-column: 1 / -1;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    height: 45px;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+/* Select specific styling */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+/* Input focus states */
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(2, 117, 255, 0.2);
+}
+
+/* Gender and Field section */
+.gender-field-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Radio Buttons */
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    height: 45px;
+    align-items: center;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Custom Radio Button */
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-blue);
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    transition: all 0.2s ease;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Checkboxes */
+.clubs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.club-option {
+    background: var(--light-blue);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.club-option:hover {
+    background: var(--light-yellow);
+    transform: translateY(-2px);
+}
+
+/* Custom Checkbox */
+.club-checkbox {
+    display: none;
+}
+
+.checkbox-custom {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 2px solid var(--primary-blue);
+    border-radius: 6px;
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.checkbox-custom::after {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+
+.club-label:hover .checkbox-custom {
+    border-color: var(--hover-blue);
+    box-shadow: 0 0 0 3px rgba(2, 117, 255, 0.1);
+}
+
+.club-checkbox:checked + .club-label .checkbox-custom {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.club-checkbox:checked + .club-label .checkbox-custom::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+
+.club-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-dark);
+    user-select: none;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+    min-width: 120px;
+}
+
+button[type="submit"] {
+    background: var(--primary-blue);
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background: var(--hover-blue);
+    transform: translateY(-2px);
+}
+
+button[type="reset"] {
+    background: var(--light-blue);
+    color: var(--primary-blue);
+}
+
+button[type="reset"]:hover {
+    background: var(--light-yellow);
+    transform: translateY(-2px);
+}
+
+/* Table Styles */
+.table-container {
+    margin-top: 2rem;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background: var(--primary-blue);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background: var(--light-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .form-row,
+    .gender-field-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .clubs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .radio-group {
+        gap: 1rem;
+    }
+}

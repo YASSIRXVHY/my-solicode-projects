@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Participation Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/images/logo-solicode.svg" alt="Solicode Logo">
+        </div>
+
+        <h1>Club Participation Form</h1>
+        
+        <form id="participationForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <span class="radio-custom"></span>
+                            Male
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" id="female" name="gender" value="female" required>
+                            <span class="radio-custom"></span>
+                            Female
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="field">Field:</label>
+                    <select id="field" name="field" required>
+                        <option value="">Select a field</option>
+                        <option value="web">Web Development</option>
+                        <option value="mobile">Mobile Development</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="group">Group:</label>
+                <select id="group" name="group" required>
+                    <option value="">Select a group</option>
+                    <optgroup id="mobileGroups" label="Mobile Development" style="display: none;">
+                        <option value="mobile1">Mobile Development Group 1</option>
+                    </optgroup>
+                    <optgroup id="webGroups" label="Web Development" style="display: none;">
+                        <option value="web1">Web Development Group 1</option>
+                        <option value="web2">Web Development Group 2</option>
+                        <option value="web3">Web Development Group 3</option>
+                        <option value="web4">Web Development Group 4</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Clubs of Interest (Select at least one):</label>
+                <div class="clubs-grid">
+                    <div class="club-option">
+                        <input type="checkbox" id="organization" name="clubs" value="organization" class="club-checkbox">
+                        <label for="organization" class="club-label">
+                            <span class="checkbox-custom"></span>
+                            Organization
+                        </label>
+                    </div>
+                    
+                    <div class="club-option">
+                        <input type="checkbox" id="socialMedia" name="clubs" value="socialMedia" class="club-checkbox">
+                        <label for="socialMedia" class="club-label">
+                            <span class="checkbox-custom"></span>
+                            Social Media
+                        </label>
+                    </div>
+                    
+                    <div class="club-option">
+                        <input type="checkbox" id="communication" name="clubs" value="communication" class="club-checkbox">
+                        <label for="communication" class="club-label">
+                            <span class="checkbox-custom"></span>
+                            Communication
+                        </label>
+                    </div>
+                    
+                    <div class="club-option">
+                        <input type="checkbox" id="design" name="clubs" value="design" class="club-checkbox">
+                        <label for="design" class="club-label">
+                            <span class="checkbox-custom"></span>
+                            Design
+                        </label>
+                    </div>
+                    
+                    <div class="club-option">
+                        <input type="checkbox" id="photography" name="clubs" value="photography" class="club-checkbox">
+                        <label for="photography" class="club-label">
+                            <span class="checkbox-custom"></span>
+                            Photography
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+
+        <h2>Participants List</h2>
+        <div class="table-container">
+            <table id="participantsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Field</th>
+                        <th>Group</th>
+                        <th>Gender</th>
+                        <th>Clubs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Participants will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
